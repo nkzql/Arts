@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/card_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="西南"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/gainsboro"
+        android:textSize="16dp"
+        android:background="@color/red"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/card_smart"/>
+    <ProgressBar
+        android:id="@+id/card_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:max="100"
+        android:progress="0"
+        app:layout_constraintTop_toBottomOf="@id/card_title"/>
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/card_smart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_title">
+        <com.scwang.smart.refresh.header.MaterialHeader
+            android:id="@+id/card_smart_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/card_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.scwang.smart.refresh.footer.BallPulseFooter
+            android:id="@+id/card_smart_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
